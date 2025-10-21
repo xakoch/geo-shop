@@ -37,24 +37,26 @@
 	grid-gap: 20px
 	margin-top: 60px
 
-.archive
-	.product
-		opacity: .4
-		transition: opacity .25s ease
-	.product:hover
-		opacity: 1
+.products:has(.product:hover) .product:not(:hover)
+	opacity: .4
 
 .product
 	border: 1px solid $b
 	position: relative
 	display: block
 	padding: 20px
+	opacity: 1
+	transition: opacity .25s ease
 
 	&:hover
+		opacity: 1
 		.add-to-cart
 			opacity: 1
 			visibility: visible
 			transform: translateY(0)
+
+	&:hover ~ .product
+		opacity: .4
 
 	&__img
 		padding: 24px 0
