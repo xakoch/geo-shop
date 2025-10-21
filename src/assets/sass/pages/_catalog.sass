@@ -1,0 +1,223 @@
+//=============================================
+// Catalog - Section
+//=============================================
+.catalog
+	padding: 0 0 100px
+
+	&__head
+		padding: 0 80px 0 260px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin-top: 50px
+
+		h1
+			text-transform: uppercase
+			font-size: 48px
+			+med
+
+		&-filter
+			display: flex
+			align-items: center
+			grid-gap: 20px
+
+		.woocommerce-result-count
+			font-size: 18px
+			color: rgba(0, 0, 0, 0.4)
+			+med
+
+		select
+			font-size: 18px
+			+med
+			display: block
+
+.products
+	display: grid
+	grid-template-columns: repeat(4, 1fr)
+	grid-gap: 20px
+	margin-top: 60px
+
+.archive
+	.product
+		opacity: .4
+		transition: opacity .25s ease
+	.product:hover
+		opacity: 1
+
+.product
+	border: 1px solid $b
+	position: relative
+	display: block
+	padding: 20px
+
+	&:hover
+		.add-to-cart
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+
+	&__img
+		padding: 24px 0
+		+flex
+
+	.colors-count
+		position: absolute
+		top: 20px
+		left: 20px
+		color: rgba(0, 0, 0, 0.6)
+		+med
+		font-size: 14px
+
+	.sale-percent
+		position: absolute
+		top: 24px
+		right: 0
+		background: $red
+		height: 32px
+		width: 64px
+		color: $w
+		font-size: 14px
+		// padding: 6px 0 0 6px
+		text-align: center
+		line-height: 32px
+		+med
+
+	&__footer
+		display: grid
+		grid-template-columns: 4fr 1fr
+		grid-gap: 10px
+
+	&__title
+		margin-bottom: 10px
+		h3
+			font-size: 24px
+			+med
+			line-height: 100%
+			color: $b
+
+	&__price
+		.price
+			font-size: 16px
+			+med
+			color: $b
+
+		.last-price
+			+med
+			color: rgba($red, .4)
+			font-size: 12px
+			text-decoration: line-through
+			margin-left: 7px
+
+	.add-to-cart
+		position: absolute
+		bottom: 20px
+		right: 20px
+		width: 48px
+		height: 48px
+		+br(50%)
+		background: rgba(0, 0, 0, 0.03)
+		+flex
+		visibility: hidden
+		opacity: 0
+		transform: translateY(10px)
+		transition: all .3s ease
+
+.catalog-btn-viewall
+	margin-top: 20px
+	display: grid
+	grid-template-columns: 1fr 1fr
+	grid-gap: 20px
+
+	a
+		grid-column-start: 2
+		font-size: 18px
+		line-height: 130%
+		color: $b
+		background: rgba(0, 0, 0, 0.03)
+		padding: 18px 20px
+		position: relative
+		transition: color .15s ease
+		overflow: hidden
+		&:hover
+			color: $w
+		&:hover::after
+			transform: translateY(0)
+		&::after
+			content: ''
+			display: block
+			height: 100%
+			width: 100%
+			background: $primary
+			position: absolute
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
+			z-index: -1
+			transform: translateY(100%)
+			transition: transform .25s ease-out
+
+
+.pagination
+	display: grid
+	grid-template-columns: 1fr 1fr
+	grid-gap: 20px
+	margin-top: 20px
+	align-items: center
+
+	&__numbers
+		display: flex
+		justify-content: flex-end
+		grid-gap: 5px
+		width: 100%
+
+		a,span
+			font-size: 18px
+			+reg
+			color: rgba($b, 0.4)
+			padding: 4px 14px
+
+		span
+			color: $b
+
+		a
+			border: 1px solid transparent
+			transition: all .25s ease
+			&:hover
+				color: $primary
+				border-color: $primary
+
+	&__arrows
+		display: grid
+		grid-template-columns: 1fr 1fr
+
+		a
+			padding: 18px 20px
+			background: rgba(0, 0, 0, 0.03)
+			font-size: 18px
+			line-height: 130%
+			color: $b
+			position: relative
+			transition: color .15s ease
+			overflow: hidden
+			&:hover
+				color: $w
+			&:hover::after
+				transform: translateY(0)
+			&::after
+				content: ''
+				display: block
+				height: 100%
+				width: 100%
+				background: $primary
+				position: absolute
+				top: 0
+				left: 0
+				bottom: 0
+				right: 0
+				z-index: -1
+				transform: translateY(100%)
+				transition: transform .25s ease-out
+
+		a:last-child
+			text-align: right

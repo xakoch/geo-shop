@@ -1,0 +1,47 @@
+//=============================================
+// Select Styles
+//=============================================
+
+.woocommerce-ordering
+	position: relative
+
+	select
+		appearance: none
+		-webkit-appearance: none
+		-moz-appearance: none
+		padding: 12px 32px 12px 16px
+		font-size: 18px
+		+med
+		color: $b
+		border: 1px solid transparent
+		cursor: pointer
+		transition: all .25s ease
+		width: auto
+
+		&:hover
+			border-color: rgba($b, .2)
+
+		&:focus
+			outline: none
+			border-color: $b
+
+		// Убираем нативную стрелку в IE
+		&::-ms-expand
+			display: none
+
+	// Кастомная стрелка для нативного селекта
+	&::after
+		content: ''
+		position: absolute
+		right: 12px
+		top: 50%
+		transform: translateY(-50%)
+		width: 12px
+		height: 12px
+		background: url(../img/header-lang-down.svg) no-repeat center
+		background-size: contain
+		pointer-events: none
+		transition: transform .3s ease
+
+	&:hover::after
+		transform: translateY(-50%) scale(1.1)

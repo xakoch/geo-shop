@@ -6,11 +6,9 @@
 	z-index: 888
 	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)
 	background: $w
-	height: 70px
+	height: 60px
 	display: flex
 	justify-content: flex-end
-	+r(1440)
-		height: 60px
 	
 	// Состояние при скролле
 	&.scrolled
@@ -412,9 +410,7 @@
 // ===========================
 // Отступ для основного контента чтобы он не скрывался под header
 body
-	padding-top: 70px
-	+r(1440)
-		padding-top: 60px
+	padding-top: 60px
 
 body.menu-open
 	overflow: hidden
