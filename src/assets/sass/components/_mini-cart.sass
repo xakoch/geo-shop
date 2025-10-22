@@ -1,0 +1,202 @@
+body.mini-cart-open, 
+body.account-open
+    overflow: hidden
+
+.mini-cart-sidebar
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 99999
+    pointer-events: none
+    padding: 0 20px
+
+    &.active
+        pointer-events: auto
+
+        .mini-cart-overlay
+            opacity: 1
+
+        .mini-cart-panel
+            right: 0
+
+.mini-cart-overlay
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.5)
+    opacity: 0
+    transition: opacity 0.3s ease
+    cursor: pointer
+
+.mini-cart-panel
+    position: absolute
+    top: 0
+    right: -450px
+    bottom: 0
+    width: 420px
+    max-width: 90vw
+    background: $w
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2)
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+    display: flex
+    flex-direction: column
+    z-index: 100000
+
+.mini-cart-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px 20px 0 20px
+    background: $w
+
+.mini-cart-title
+    text-align: center
+    +semi
+    font-size: 18px
+
+.mini-cart-body
+    flex: 1
+    overflow-y: auto
+    padding: 25px
+
+.cart_list
+    border-top: 1px solid $b
+    padding: 20px 0
+    display: flex
+    flex-direction: column
+    grid-gap: 20px
+
+.mini_cart_item
+    display: flex
+    grid-gap: 16px
+
+.mini-cart-item-image
+    width: 120px
+    height: 120px
+    background: rgba(0, 0, 0, 0.03)
+    padding: 15px
+    +flex
+
+.mini-cart-item-details
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.mini-cart-item-name
+    a
+        font-size: 18px
+        +med
+        line-height: 100%
+        display: block
+        margin-bottom: 10px
+        color: $b
+
+.mini-cart-item-price
+    span, bdi
+        font-size: 14px
+        +med
+
+.remove_from_cart_button
+    display: flex
+    align-items: center
+    grid-gap: 5px
+    color: #F52222
+
+// =========================
+// Mini total
+// =========================
+
+.mini-cart-summary
+    border-top: 1px solid $b
+    border-bottom: 1px solid $b
+    padding: 20px 0
+    display: flex
+    flex-direction: column
+    grid-gap: 16px
+
+    .summary-label,
+    .summary-value
+        font-size: 16px
+        +med
+
+.summary-row
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+// =========================
+// Last Total
+// =========================
+
+.woocommerce-mini-cart__total
+    padding: 20px 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    & > strong
+        font-size: 18px
+        +med
+
+    .woocommerce-Price-amount
+        font-size: 24px
+        +med
+
+// =========================
+// Buttons
+// =========================
+
+.woocommerce-mini-cart__buttons 
+    display: flex
+    flex-direction: column
+    grid-gap: 16px
+
+    .button:first-child
+        background: transparent
+        color: $primary
+        border: 2px solid $primary
+        padding: 15px 20px
+        &:hover
+            color: $w
+            background: transparent
+        &::after
+            background: $primary
+    
+    .button
+        width: 100%
+        padding: 18px 20px
+        font-size: 16px
+        text-transform: uppercase
+        +med
+        background: $primary
+        color: $w
+        text-align: right
+        transition: all .15s cubic-bezier(0.4, 0, 0.2, 1)
+        overflow: hidden
+        position: relative
+        border: 2px solid transparent
+        &:hover
+            color: $primary
+            background: $w
+            border-color: $primary
+            background: transparent
+        &:hover::after
+            transform: translateY(0)
+        &::after
+            content: ''
+            display: block
+            height: 100%
+            width: 100%
+            background: $w
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            z-index: -1
+            transform: translateY(100%)
+            transition: transform .25s ease-out

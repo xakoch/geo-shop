@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" media="all" href="assets/css/style.min.css" />
+    <script src="https://deeppink-horse-920297.hostingersite.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+    <script src="https://deeppink-horse-920297.hostingersite.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
 </head>
 <body class="{{ pagename }}">
 
@@ -26,6 +28,170 @@
 
         {{> footer }}
     </div>
+
+    <!-- Mini Cart Sidebar -->
+    <div class="mini-cart-sidebar">
+        <div class="mini-cart-overlay"></div>
+        <div class="mini-cart-panel">
+            <div class="mini-cart-header">
+                <span></span>
+                <h3 class="mini-cart-title">Cart</h3>
+                <button class="mini-cart-close" aria-label="Close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="mini-cart-body">
+                <!-- <p class="woocommerce-mini-cart__empty-message">The basket is empty</p> -->
+                <ul class="woocommerce-mini-cart cart_list product_list_widget">
+                    <li class="woocommerce-mini-cart-item mini_cart_item">
+                        <div class="mini-cart-item-image">
+                            <a href="#"> 
+                                <img width="300" height="300" src="https://deeppink-horse-920297.hostingersite.com/wp-content/uploads/2025/10/400e_front-300x300.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt="Electrically heated 400g/m² undergarment" decoding="async" loading="lazy" srcset="https://deeppink-horse-920297.hostingersite.com/wp-content/uploads/2025/10/400e_front-300x300.png 300w, https://deeppink-horse-920297.hostingersite.com/wp-content/uploads/2025/10/400e_front-150x150.png 150w, https://deeppink-horse-920297.hostingersite.com/wp-content/uploads/2025/10/400e_front-100x100.png 100w" sizes="auto, (max-width: 300px) 100vw, 300px">
+                            </a>
+                        </div>
+                        <div class="mini-cart-item-details">
+                            <div class="mini-cart-item-details-top">
+                                <div class="mini-cart-item-name"> 
+                                    <a href="#">Electrically heated 400g/m² undergarment</a> 
+                                </div>
+                                <div class="mini-cart-item-pricing">
+                                    <div class="mini-cart-item-price"> 
+                                        <span class="price-value">
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi>500,00<span class="woocommerce-Price-currencySymbol">€</span></bdi>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mini-cart-item-details-bottom">
+                                <a href="#" class="remove remove_from_cart_button">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 4H13V14C13 14.2652 12.8946 14.5195 12.707 14.707C12.5195 14.8946 12.2652 15 12 15H4C3.73478 15 3.48051 14.8946 3.29297 14.707C3.10543 14.5195 3 14.2652 3 14V4H2V3H14V4ZM4 14H12V4H4V14ZM7 12H6V6H7V12ZM10 12H9V6H10V12ZM10 1V2H6V1H10Z" fill="#F52222"/></svg>
+                                    <span>Remove</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="woocommerce-mini-cart-item mini_cart_item">
+                        <div class="mini-cart-item-image">
+                            <a href="#"> 
+                                <img width="300" height="300" src="https://deeppink-horse-920297.hostingersite.com/wp-content/uploads/2025/10/400e_front-300x300.png" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail wp-post-image" alt="Electrically heated 400g/m² undergarment" decoding="async" loading="lazy" srcset="https://deeppink-horse-920297.hostingersite.com/wp-content/uploads/2025/10/400e_front-300x300.png 300w, https://deeppink-horse-920297.hostingersite.com/wp-content/uploads/2025/10/400e_front-150x150.png 150w, https://deeppink-horse-920297.hostingersite.com/wp-content/uploads/2025/10/400e_front-100x100.png 100w" sizes="auto, (max-width: 300px) 100vw, 300px">
+                            </a>
+                        </div>
+                        <div class="mini-cart-item-details">
+                            <div class="mini-cart-item-details-top">
+                                <div class="mini-cart-item-name"> 
+                                    <a href="#">Electrically heated 400g/m² undergarment</a> 
+                                </div>
+                                <div class="mini-cart-item-pricing">
+                                    <div class="mini-cart-item-price"> 
+                                        <span class="price-value">
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi>500,00<span class="woocommerce-Price-currencySymbol">€</span></bdi>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mini-cart-item-details-bottom">
+                                <a href="#" class="remove remove_from_cart_button">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 4H13V14C13 14.2652 12.8946 14.5195 12.707 14.707C12.5195 14.8946 12.2652 15 12 15H4C3.73478 15 3.48051 14.8946 3.29297 14.707C3.10543 14.5195 3 14.2652 3 14V4H2V3H14V4ZM4 14H12V4H4V14ZM7 12H6V6H7V12ZM10 12H9V6H10V12ZM10 1V2H6V1H10Z" fill="#F52222"/></svg>
+                                    <span>Remove</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="mini-cart-totals">
+                    <div class="mini-cart-summary">
+                        <div class="summary-row">
+                            <span class="summary-label">Items in cart:</span>
+                            <span class="summary-value">1 pc</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Interim result:</span>
+                            <span class="summary-value"><span class="woocommerce-Price-amount amount"><bdi>110,00<span class="woocommerce-Price-currencySymbol">€</span></bdi></span></span>
+                        </div>
+                    </div>
+
+                    <div class="woocommerce-mini-cart__total total">
+                        <strong>Total:</strong>
+                        <strong class="total-amount"><span class="woocommerce-Price-amount amount"><bdi>110,00<span class="woocommerce-Price-currencySymbol">€</span></bdi></span></strong>
+                    </div>
+                </div>
+                <div class="woocommerce-mini-cart__buttons buttons">
+                    <a href="#" class="button wc-forward">Cart</a>
+                    <a href="#" class="button checkout wc-forward">Place an order</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Account Sidebar -->
+    <div class="account-sidebar">
+        <div class="account-overlay"></div>
+        <div class="account-panel">
+            <div class="account-header">
+                <span></span>
+                <h3 class="account-title">Login / Sing up</h3>
+                <button class="account-close" aria-label="close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="account-body">
+                <!-- Для неавторизованных пользователей -->
+                <div class="account-tabs">
+                    <button class="account-tab active" data-tab="login">Login</button>
+                    <button class="account-tab" data-tab="register">Sign up</button>
+                </div>
+                <div class="account-forms">
+                    <!-- Форма входа -->
+                    <div class="account-form-wrapper active" id="login-form">
+                        <form method="post" class="login-form" autocomplete="off">
+                            <p class="form-row">
+                                <input type="text" name="username" id="username" required placeholder="Login / Email*" autocomplete="off" />
+                            </p>
+                            <p class="form-row">
+                                <input type="password" name="password" id="password" required placeholder="Password*" autocomplete="off" />
+                            </p>
+                            <p class="form-row form-row-remember">
+                                <label>
+                                    <input type="checkbox" name="rememberme" value="forever" /> <span>Remember me</span> 
+                                </label>
+                            </p>
+                            <p class="form-row">
+                                <input type="hidden" />
+                                <button type="submit" name="login" class="button">Login</button>
+                            </p>
+                            <p class="lost-password"> 
+                                <a href="#">Lost password?</a> 
+                            </p>
+                        </form>
+                    </div>
+                    <!-- Форма регистрации -->
+                    <div class="account-form-wrapper" id="register-form">
+                        <form method="post" class="register-form" autocomplete="off">
+                            <p class="form-row">
+                                <input type="text" name="username" id="reg_username" required placeholder="Login" autocomplete="off" />
+                            </p>
+                            <p class="form-row">
+                                <input type="email" name="email" id="reg_email" required placeholder="Email" autocomplete="off" />
+                            </p>
+                            <p class="form-row">
+                                <input type="password" name="password" id="reg_password" required placeholder="Password" autocomplete="off" />
+                            </p>
+                            <p class="form-row">
+                                <button type="submit" name="register" class="button">Sign up</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         
     <!-- <a class="back" href="/">back to all pages</a> -->
     <!-- END content -->
@@ -33,6 +199,7 @@
     <!-- BEGIN scripts -->
     <script defer type="text/javascript" src="assets/js/lib.min.js"></script>
     <script defer type="text/javascript" src="assets/js/app.min.js"></script>
+    <script defer type="text/javascript" src="assets/js/add.js"></script>
     <!-- END scripts -->
 
 </body>

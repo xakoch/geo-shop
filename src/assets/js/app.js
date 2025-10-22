@@ -68,13 +68,16 @@ function initLenis() {
             touchMultiplier: 2,
             infinite: false,
         });
-        
+
+        // Экспортируем в глобальную область для доступа из других скриптов
+        window.lenis = lenis;
+
         // Привязываем Lenis к requestAnimationFrame для обновления
         function raf(time) {
             lenis.raf(time);
             requestAnimationFrame(raf);
         }
-        
+
         requestAnimationFrame(raf);
 
 
