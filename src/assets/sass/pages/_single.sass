@@ -3,20 +3,18 @@
 //=============================================
 .single
 	.product
+		display: grid
+		grid-template-columns: 1fr 1fr
+		grid-gap: 60px
+		padding: 40px 80px
+		margin: 0 auto
 		border: none
-
-.product
-	display: grid
-	grid-template-columns: 1fr 1fr
-	grid-gap: 60px
-	padding: 40px 80px
-	margin: 0 auto
-	+r(1200)
-		grid-template-columns: 1fr
-		grid-gap: 40px
-		padding: 40px 20px
-	+r(768)
-		padding: 30px 15px
+		+r(1200)
+			grid-template-columns: 1fr
+			grid-gap: 40px
+			padding: 40px 20px
+		+r(768)
+			padding: 30px 15px
 
 //=============================================
 // Product Gallery
