@@ -398,3 +398,74 @@
 
 			&:hover
 				opacity: 0.7
+
+//=============================================
+// Recommendations Section
+//=============================================
+.recommendations
+	padding: 80px 0
+	background: $w
+	+r(1200)
+		padding: 60px 0
+	+r(768)
+		padding: 50px 0
+
+	&__container
+		margin: 0 auto
+		padding: 0 80px
+		+r(1200)
+			padding: 0 40px
+		+r(768)
+			padding: 0 20px
+
+	&__title
+		font-size: 32px
+		+med
+		line-height: 110%
+		margin-bottom: 40px !important
+		+r(768)
+			font-size: 24px
+			margin-bottom: 30px
+
+	.products
+		margin-top: 0
+
+//=============================================
+// Related Products Section
+//=============================================
+.related-products
+	padding: 80px 0
+	background: rgba(0, 0, 0, 0.02)
+	+r(1200)
+		padding: 60px 0
+	+r(768)
+		padding: 50px 0
+
+	&__container
+		margin: 0 auto
+		padding: 0 80px
+		+r(1200)
+			padding: 0 40px
+		+r(768)
+			padding: 0 20px
+
+	&__title
+		font-size: 32px
+		+med
+		line-height: 110%
+		margin-bottom: 40px !important
+		+r(768)
+			font-size: 24px
+			margin-bottom: 30px
+
+	.products
+		margin-top: 0
+
+
+.recommendations .product,
+.related-products .product
+	display: block
+	padding: 20px
+	border: 1px solid $b
+	align-items: unset
+	width: 100%
