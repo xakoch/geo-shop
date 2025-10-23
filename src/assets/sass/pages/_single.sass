@@ -1,123 +1,262 @@
-.single__hero
-	display: grid
-	grid-template-columns: 1fr 1fr
-	+r(991)
-		grid-template-columns: 1fr
-
-	&-img
-		img
-			width: 100%
-			object-fit: cover
-			object-position: center
-			height: 100vh
-			+r(991)
-				height: 400px
-				object-position: top
-
-	&-content
-		background: $bb
-		padding: 150px 60px 45px 60px
-		+r(1440)
-			padding: 80px 50px 40px 50px
-		+r(1200)
-			padding: 60px 40px 30px 40px
-		+r(560)
-			padding: 40px 20px
-
-		h1
-			font-size: 64px
-			+r(1440)
-				font-size: 48px
-			+r(1336)
-				font-size: 42px
-			+r(560)
-				font-size: 36px
-
-	.service__top
-		padding: 0
-
-	.service__footer>p,
-	.service__footer-item span,
-	.service__footer-item p
-		color: $w
-	
-	.service__header
-		h5
-			font-size: 18px
-			+med
-			margin-top: 40px !important
-			+r(1440)
-				font-size: 16px
-				margin-top: 20px !important
-			+r(1200)
-				font-size: 14px
-		ul
-			margin-top: 20px !important
-			list-style-type: disc !important
-			padding-left: 20px
-			font-size: 16px
-			+r(1200)
-				font-size: 14px
-		p
-			margin: 10px 0
-			font-size: 16px
-			+r(1200)
-				font-size: 14px
-				+reg
-
-	.service__content
+//=============================================
+// Product Page
+//=============================================
+.single
+	.product
 		border: none
 
-	.service__footer-list
+.product
+	display: grid
+	grid-template-columns: 1fr 1fr
+	grid-gap: 60px
+	padding: 40px 80px
+	margin: 0 auto
+	+r(1200)
+		grid-template-columns: 1fr
 		grid-gap: 40px
-		+r(560)
-			grid-gap: 15px
+		padding: 40px 20px
+	+r(768)
+		padding: 30px 15px
 
-	.service__footer-item
-		+r(560)
+//=============================================
+// Product Gallery
+//=============================================
+.product-gallery
+	width: 100%
+	max-width: 100%
+	overflow: hidden
+
+	&__main
+		margin-bottom: 15px
+		width: 100%
+		max-width: 100%
+
+		.swiper
+			width: 100%
+			max-width: 100%
+			overflow: hidden
+
+		.swiper-slide
+			display: flex
 			align-items: center
+			justify-content: center
+			background: rgba(0, 0, 0, 0.02)
+			min-height: 500px
+			width: 100%
+			max-width: 100%
+			+r(1200)
+				min-height: 400px
+			+r(768)
+				min-height: 350px
 
-	.service__footer-item span
-		font-size: 24px
-		line-height: 125%
-		font-size: 24px
+			img
+				width: auto
+				height: auto
+				max-width: 100%
+				max-height: 500px
+				object-fit: contain
+				display: block
+				+r(1200)
+					max-height: 400px
+				+r(768)
+					max-height: 350px
+
+	&__thumbs
+		width: 100%
+		max-width: 100%
+
+		.swiper
+			width: 100%
+			max-width: 100%
+			overflow: hidden
+
+		.swiper-slide
+			cursor: pointer
+			background: rgba(0, 0, 0, 0.02)
+			border: 2px solid transparent
+			transition: border-color .3s ease
+			display: flex
+			align-items: center
+			justify-content: center
+			padding: 10px
+			height: 120px
+			box-sizing: border-box
+			+r(768)
+				height: 100px
+				padding: 8px
+
+			&:hover
+				border-color: rgba($b, 0.3)
+
+			&-thumb-active
+				border-color: $b !important
+
+			img
+				width: auto
+				height: auto
+				max-width: 100%
+				max-height: 100%
+				object-fit: contain
+				display: block
+
+//=============================================
+// Product Info
+//=============================================
+.product-info
+	&__title
+		font-size: 48px
 		+med
+		line-height: 110%
+		margin-bottom: 30px
 		+r(1440)
-			font-size: 20px
-		+r(560)
-			font-size: 16px
+			font-size: 40px
+		+r(768)
+			font-size: 32px
+			margin-bottom: 20px
 
-	.service__footer-item p
-		font-size: 12px
-		line-height: 120%
-		+reg
-		margin-top: 10px
-		+r(560)
-			margin-top: 0
+	&__price
+		display: flex
+		align-items: center
+		gap: 15px
+		margin-bottom: 40px
+		+r(768)
+			margin-bottom: 30px
 
-	.service__footer>p
-		font-size: 20px
-		+med
-		margin-top: 40px
-		margin-bottom: 0
-		+r(1440)
-			font-size: 16px
-		+r(1366)
-			font-size: 14px
-		+r(1200)
-			br
-				display: none
+		&--old
+			font-size: 24px
+			color: rgba($b, 0.4)
+			text-decoration: line-through
+			+r(768)
+				font-size: 20px
 
-	.service__price
-		margin-bottom: 60px
-		+r(1440)
-			margin-bottom: 40px
-		h5
+		&--current
 			font-size: 36px
 			+bold
-			+r(1440)
+			color: $b
+			+r(768)
 				font-size: 28px
 
+	&__cart
+		margin-bottom: 40px
+		+r(768)
+			margin-bottom: 30px
 
-.related-courses
-	background: $f5
+	&__quantity
+		display: flex
+		align-items: center
+		gap: 15px
+		margin-bottom: 20px
+
+		label
+			font-size: 16px
+			+med
+
+		input
+			width: 80px
+			padding: 10px
+			border: 1px solid rgba($b, 0.2)
+			font-size: 16px
+			text-align: center
+
+	.btn
+		width: 100%
+		padding: 18px 40px
+		font-size: 18px
+		+med
+		background: $b
+		color: $w
+		border: none
+		cursor: pointer
+		transition: background .3s ease
+		+r(768)
+			padding: 15px 30px
+			font-size: 16px
+
+		&:hover
+			background: darken($b, 10%)
+
+	&__meta
+		display: flex
+		flex-direction: column
+		gap: 10px
+		padding-top: 30px
+		border-top: 1px solid rgba($b, 0.1)
+		font-size: 14px
+		color: rgba($b, 0.6)
+
+		strong, a
+			color: $b
+
+		a
+			text-decoration: underline
+
+//=============================================
+// Product Description
+//=============================================
+.product-description
+	background: rgba(0, 0, 0, 0.02)
+	padding: 80px 0
+	+r(1200)
+		padding: 60px 0
+	+r(768)
+		padding: 40px 0
+
+	&__container
+		margin: 0 auto
+		padding: 0 80px
+		+r(1200)
+			padding: 0 40px
+		+r(768)
+			padding: 0 20px
+
+	&__title
+		font-size: 24px
+		+med
+		line-height: 110%
+		margin-bottom: 40px !important
+		+r(1200)
+			font-size: 40px
+			margin-bottom: 30px
+		+r(768)
+			font-size: 32px
+			margin-bottom: 25px
+
+	&__content
+		font-size: 16px
+		line-height: 130%
+		color: $b
+
+		p
+			margin-bottom: 20px
+			+r(768)
+				margin-bottom: 15px
+
+			&:last-child
+				margin-bottom: 0
+
+		ul
+			list-style: disc
+			padding-left: 30px
+			margin: 20px 0 !important
+			+r(768)
+				padding-left: 25px
+				margin: 15px 0
+
+			li
+				margin-bottom: 12px
+				+r(768)
+					margin-bottom: 10px
+
+				&:last-child
+					margin-bottom: 0
+
+		strong
+			+bold
+
+		a
+			color: $b
+			text-decoration: underline
+			transition: opacity .3s ease
+
+			&:hover
+				opacity: 0.7

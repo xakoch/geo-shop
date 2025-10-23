@@ -3,4 +3,100 @@ layout: default
 title: Single
 pagename: single
 ---
-	
+
+<div class="product">
+	<div class="product-gallery">
+		<!-- Основной слайдер -->
+		<div class="product-gallery__main">
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="http://geoshop.loc/wp-content/uploads/2025/10/400e_front.png" alt="Product 1">
+					</div>
+					<div class="swiper-slide">
+						<img src="http://geoshop.loc/wp-content/uploads/2025/10/400_back.png" alt="Product 2">
+					</div>
+					<div class="swiper-slide">
+						<img src="http://geoshop.loc/wp-content/uploads/2025/10/400_left.png" alt="Product 3">
+					</div>
+					<div class="swiper-slide">
+						<img src="http://geoshop.loc/wp-content/uploads/2025/10/400_back.png" alt="Product 2">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Миниатюры -->
+		<div class="product-gallery__thumbs">
+			<div class="swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="http://geoshop.loc/wp-content/uploads/2025/10/400e_front.png" alt="Thumb 1">
+					</div>
+					<div class="swiper-slide">
+						<img src="http://geoshop.loc/wp-content/uploads/2025/10/400_back.png" alt="Thumb 2">
+					</div>
+					<div class="swiper-slide">
+						<img src="http://geoshop.loc/wp-content/uploads/2025/10/400_left.png" alt="Thumb 3">
+					</div>
+					<div class="swiper-slide">
+						<img src="http://geoshop.loc/wp-content/uploads/2025/10/400_back.png" alt="Thumb 2">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="product-info">
+		<h1 class="product-info__title">Electrically heated 400g/m² undergarment</h1>
+
+		<div class="product-info__price">
+			<span class="product-info__price--old">600,00 €</span>
+			<span class="product-info__price--current">500,00 €</span>
+		</div>
+
+		<form class="product-info__cart" action="http://geoshop.loc/product/electric-heating/400/" method="post">
+			<div class="product-info__quantity">
+				<label for="quantity">Quantity</label>
+				<input type="number" id="quantity" name="quantity" value="1" min="1" step="1">
+			</div>
+
+			<button type="submit" name="add-to-cart" value="166" class="btn btn--primary">
+				Добавить в корзину
+			</button>
+		</form>
+
+		<div class="product-info__meta">
+			<span class="product-info__sku">SKU: <strong>49969</strong></span>
+			<span class="product-info__category">
+				Category: <a href="http://geoshop.loc/category/electric-heating/">Electric heating</a>
+			</span>
+		</div>
+	</div>
+</div>
+
+<div class="product-description">
+	<div class="product-description__container">
+		<h2 class="product-description__title">Description</h2>
+		<div class="product-description__content">
+			<p>
+				The electrically heated 400g/m² undergarment is designed for maximum comfort and warmth in extreme conditions.
+				This innovative product combines advanced heating technology with premium materials to keep you warm in the coldest environments.
+			</p>
+			<p>
+				Key features include:
+			</p>
+			<ul>
+				<li>Electric heating system with adjustable temperature control</li>
+				<li>High-quality 400g/m² insulation material</li>
+				<li>Moisture-wicking fabric for optimal comfort</li>
+				<li>Rechargeable battery with up to 8 hours of heating</li>
+				<li>Machine washable (battery removed)</li>
+			</ul>
+			<p>
+				Perfect for outdoor activities, winter sports, or anyone who works in cold conditions.
+				The heating elements are strategically placed to provide warmth where you need it most.
+			</p>
+		</div>
+	</div>
+</div>

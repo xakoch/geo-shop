@@ -579,6 +579,51 @@ function initMobileMenu() {
 
 
 /**
+ * Инициализирует слайдер галереи товара
+ */
+function initProductGallery() {
+    try {
+        if (typeof Swiper === 'undefined') {
+            console.warn('Swiper is not defined');
+            return;
+        }
+
+        const mainSliderEl = document.querySelector('.product-gallery__main .swiper');
+        const thumbsSliderEl = document.querySelector('.product-gallery__thumbs .swiper');
+
+        if (!mainSliderEl || !thumbsSliderEl) {
+            console.warn('Product gallery elements not found');
+            return;
+        }
+
+        // Инициализация слайдера миниатюр
+        const galleryThumbs = new Swiper(thumbsSliderEl, {
+            spaceBetween: 10,
+            slidesPerView: 3,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+
+        // Инициализация основного слайдера
+        const galleryMain = new Swiper(mainSliderEl, {
+            spaceBetween: 10,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            thumbs: {
+                swiper: galleryThumbs
+            },
+        });
+
+        console.log('Product gallery initialized successfully');
+
+    } catch (error) {
+        console.error("Error in initProductGallery:", error);
+    }
+}
+
+/**
  * Запускает все скрипты на новой странице
  */
 function initScript() {
@@ -589,6 +634,7 @@ function initScript() {
 
         initFancybox();
         initMobileMenu();
+        initProductGallery();
     } catch (error) {
         console.error("Error in " + arguments.callee.name + ":", error);
     }
