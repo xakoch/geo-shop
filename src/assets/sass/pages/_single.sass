@@ -4,7 +4,7 @@
 .single
 	.product
 		display: grid
-		grid-template-columns: 1fr 1fr
+		grid-template-columns: 2fr 1fr
 		grid-gap: 60px
 		padding: 40px 80px
 		margin: 0 auto
@@ -38,8 +38,8 @@
 			display: flex
 			align-items: center
 			justify-content: center
-			background: rgba(0, 0, 0, 0.02)
-			min-height: 500px
+			background: rgba(0, 0, 0, 0.03)
+			min-height: 600px
 			width: 100%
 			max-width: 100%
 			+r(1200)
@@ -54,6 +54,7 @@
 				max-height: 500px
 				object-fit: contain
 				display: block
+				padding: 20px 0
 				+r(1200)
 					max-height: 400px
 				+r(768)
@@ -102,91 +103,145 @@
 //=============================================
 .product-info
 	&__title
-		font-size: 48px
+		font-size: 32px
 		+med
-		line-height: 110%
-		margin-bottom: 30px
-		+r(1440)
-			font-size: 40px
+		line-height: 120%
+		margin-bottom: 20px !important
 		+r(768)
-			font-size: 32px
-			margin-bottom: 20px
+			font-size: 24px
 
 	&__price
-		display: flex
-		align-items: center
-		gap: 15px
-		margin-bottom: 40px
+		font-size: 32px
+		+med
+		color: $b
+		margin-bottom: 30px
 		+r(768)
-			margin-bottom: 30px
-
-		&--old
 			font-size: 24px
-			color: rgba($b, 0.4)
-			text-decoration: line-through
-			+r(768)
-				font-size: 20px
+			margin-bottom: 25px
 
-		&--current
-			font-size: 36px
-			+bold
-			color: $b
-			+r(768)
-				font-size: 28px
+	&__colors
+		margin-bottom: 25px
 
-	&__cart
-		margin-bottom: 40px
+	&__label
+		font-size: 14px
+		color: rgba($b, 0.7)
+		margin-bottom: 12px
+		display: block
+
+	&__color-list
+		display: flex
+		gap: 10px
+
+	&__color
+		width: 28px
+		height: 28px
+		+br(50%)
+		border: 1px solid transparent
+		cursor: pointer
+		position: relative
+		transition: all .2s ease
+
+		&:hover
+			transform: scale(1.05)
+
+		&.active
+			border-color: $b
+			width: 60px
+			+br(40px)
+			
+			&::after
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				width: 12px
+				height: 12px
+				background: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.5 8.5L11 1' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat
+
+	&__sizes
+		margin-bottom: 25px
+
+	&__size-list
+		display: flex
+		gap: 8px
+
+	&__size
+		width: 28px
+		height: 28px
+		+flex
+		background: rgba(0, 0, 0, 0.03)
+		font-size: 14px
+		+med
+		+br(50%)
+		cursor: pointer
+		transition: all .2s ease
+		line-height: 100%
+		border: none
+
+		&:hover
+			border-color: $b
+
+		&.active
+			background: $b
+			color: $w
+			width: 60px
+			+br(40px)
+
+	&__quantity-block
+		margin-bottom: 30px
 		+r(768)
-			margin-bottom: 30px
+			margin-bottom: 25px
 
 	&__quantity
 		display: flex
 		align-items: center
-		gap: 15px
-		margin-bottom: 20px
+		height: 40px
+		background: rgba(0, 0, 0, 0.03)
+		max-width: 400px
 
-		label
-			font-size: 16px
-			+med
+		button
+			width: 50px
+			height: 100%
+			background: transparent
+			font-size: 20px
+			cursor: pointer
+			transition: all .2s ease
+			display: flex
+			align-items: center
+			justify-content: center
+
+			&:hover
+				border-color: $b
+				background: rgba($b, 0.05)
 
 		input
-			width: 80px
-			padding: 10px
-			border: 1px solid rgba($b, 0.2)
+			flex: 1
+			height: 100%
 			font-size: 16px
 			text-align: center
+			+med
 
 	.btn
 		width: 100%
-		padding: 18px 40px
-		font-size: 18px
-		+med
-		background: $b
+		height: 56px
+		padding: 18px 20px
+		background: $primary
 		color: $w
 		border: none
+		font-size: 16px
+		+med
+		text-transform: uppercase
 		cursor: pointer
 		transition: background .3s ease
+		max-width: 400px
+		text-align: right
 		+r(768)
-			padding: 15px 30px
-			font-size: 16px
+			height: 48px
+			font-size: 14px
 
 		&:hover
 			background: darken($b, 10%)
-
-	&__meta
-		display: flex
-		flex-direction: column
-		gap: 10px
-		padding-top: 30px
-		border-top: 1px solid rgba($b, 0.1)
-		font-size: 14px
-		color: rgba($b, 0.6)
-
-		strong, a
-			color: $b
-
-		a
-			text-decoration: underline
 
 //=============================================
 // Product Description
