@@ -4,11 +4,12 @@
 .single
 	.product
 		display: grid
-		grid-template-columns: 2fr 1fr
-		grid-gap: 60px
+		grid-template-columns: 1fr 400px
+		grid-gap: 40px
 		padding: 40px 80px
 		margin: 0 auto
 		border: none
+		align-items: start
 		+r(1200)
 			grid-template-columns: 1fr
 			grid-gap: 40px
@@ -22,86 +23,135 @@
 .product-gallery
 	width: 100%
 	max-width: 100%
-	overflow: hidden
 
 	&__main
-		margin-bottom: 15px
+		margin-bottom: 20px
 		width: 100%
-		max-width: 100%
+		position: relative
+		background: rgba(0, 0, 0, 0.03)
+		overflow: hidden
+		cursor: zoom-in
 
-		.swiper
+		a
+			display: block
 			width: 100%
-			max-width: 100%
-			overflow: hidden
+			height: 100%
+			position: relative
 
-		.swiper-slide
-			display: flex
-			align-items: center
-			justify-content: center
-			background: rgba(0, 0, 0, 0.03)
-			min-height: 600px
+			&::after
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				width: 60px
+				height: 60px
+				background: rgba(255, 255, 255, 0.9)
+				+br(50%)
+				opacity: 0
+				transition: opacity .3s ease
+				pointer-events: none
+				background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11 8V14M8 11H14' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")
+				background-repeat: no-repeat
+				background-position: center
+				background-size: 28px 28px
+
+			&:hover::after
+				opacity: 1
+
+		img
 			width: 100%
-			max-width: 100%
+			height: auto
+			min-height: 500px
+			max-height: 700px
+			object-fit: contain
+			display: block
+			padding: 20px 0
 			+r(1200)
 				min-height: 400px
+				max-height: 600px
 			+r(768)
-				min-height: 350px
+				min-height: 300px
+				max-height: 450px
 
-			img
-				width: auto
-				height: auto
-				max-width: 100%
-				max-height: 500px
-				object-fit: contain
-				display: block
-				padding: 20px 0
-				+r(1200)
-					max-height: 400px
-				+r(768)
-					max-height: 350px
+	&__grid
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		gap: 15px
+		max-height: 800px
+		overflow-y: auto
+		padding-right: 5px
+		+r(1200)
+			max-height: 600px
+		+r(768)
+			max-height: 500px
+			gap: 10px
 
-	&__thumbs
-		width: 100%
-		max-width: 100%
+		// Custom scrollbar
+		&::-webkit-scrollbar
+			width: 6px
 
-		.swiper
-			width: 100%
-			max-width: 100%
-			overflow: hidden
+		&::-webkit-scrollbar-track
+			background: rgba(0, 0, 0, 0.05)
+			+br(3px)
 
-		.swiper-slide
-			cursor: pointer
-			background: rgba(0, 0, 0, 0.02)
-			border: 2px solid transparent
-			transition: border-color .3s ease
-			display: flex
-			align-items: center
-			justify-content: center
-			padding: 10px
-			height: 120px
-			box-sizing: border-box
-			+r(768)
-				height: 100px
-				padding: 8px
+		&::-webkit-scrollbar-thumb
+			background: rgba($b, 0.3)
+			+br(3px)
 
 			&:hover
-				border-color: rgba($b, 0.3)
+				background: rgba($b, 0.5)
 
-			&-thumb-active
-				border-color: $b !important
+	&__item
+		display: block
+		position: relative
+		background: rgba(0, 0, 0, 0.03)
+		overflow: hidden
+		cursor: zoom-in
+		height: 250px
+		padding: 20px 0
+		+r(768)
+			height: 150px
 
-			img
-				width: auto
-				height: auto
-				max-width: 100%
-				max-height: 100%
-				object-fit: contain
-				display: block
+		&::after
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 50px
+			height: 50px
+			background: rgba(255, 255, 255, 0.9)
+			+br(50%)
+			opacity: 0
+			transition: opacity .3s ease
+			pointer-events: none
+			background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11 8V14M8 11H14' stroke='%23000000' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")
+			background-repeat: no-repeat
+			background-position: center
+			background-size: 24px 24px
+			z-index: 2
+
+		&:hover::after
+			opacity: 1
+
+		img
+			width: 100%
+			height: 100%
+			object-fit: contain
+			display: block
 
 //=============================================
 // Product Info
 //=============================================
 .product-info
+	position: sticky
+	top: 70px
+	height: fit-content
+	+r(1200)
+		position: relative
+		top: 0
+
 	&__title
 		font-size: 32px
 		+med
@@ -111,7 +161,7 @@
 			font-size: 24px
 
 	&__price
-		font-size: 32px
+		font-size: 26px
 		+med
 		color: $b
 		margin-bottom: 30px
@@ -222,26 +272,61 @@
 			text-align: center
 			+med
 
+	&__actions
+		display: flex
+		gap: 12px
+		margin-bottom: 20px
+		+r(768)
+			flex-direction: column
+			gap: 10px
+
 	.btn
 		width: 100%
 		height: 56px
 		padding: 18px 20px
-		background: $primary
-		color: $w
 		border: none
 		font-size: 16px
 		+med
 		text-transform: uppercase
 		cursor: pointer
-		transition: background .3s ease
+		transition: all .3s ease
 		max-width: 400px
-		text-align: right
+		line-height: 100%
+		text-align: center
 		+r(768)
 			height: 48px
 			font-size: 14px
+			max-width: 100%
 
-		&:hover
-			background: darken($b, 10%)
+		&--primary
+			background: $primary
+			color: $w
+
+			&:hover
+				background: darken($b, 10%)
+
+		&--secondary
+			background: rgba(0, 0, 0, 0.03)
+			color: $primary
+			// border: 2px solid $primary
+
+			&:hover
+				background: $primary
+				color: $w
+
+	&__sku
+		display: flex
+		align-items: center
+		gap: 8px
+		font-size: 14px
+		color: rgba($b, 0.7)
+		margin-bottom: 20px
+
+		&-label
+			+med
+
+		&-value
+			color: $b
 
 //=============================================
 // Product Description
