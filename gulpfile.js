@@ -174,7 +174,9 @@ function watchFiles() {
 }
 
 const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts, video))
-const watch = gulp.parallel(build, watchFiles, serve)
+const watch = gulp.series(build, gulp.parallel(watchFiles, serve))  // Поменяй parallel
+
+exports.default = watch
 
 exports.html = html
 exports.css = css

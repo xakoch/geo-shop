@@ -1,0 +1,277 @@
+//=============================================
+// Cart Page
+//=============================================
+.cart-page
+	padding: 80px 0
+	+r(1200)
+		padding: 60px 0
+	+r(768)
+		padding: 40px 0
+
+	&__wrapper
+		display: grid
+		grid-template-columns: 1fr 380px
+		gap: 40px
+		+r(1200)
+			grid-template-columns: 1fr
+			gap: 30px
+
+	&__products
+		display: flex
+		flex-direction: column
+		gap: 0
+
+	&__header
+		display: grid
+		grid-template-columns: 1fr auto
+		padding: 20px 0
+		border-bottom: 1px solid $b
+		font-size: 18px
+		+med
+		margin-bottom: 20px
+		+r(768)
+			display: none
+
+	&__header-product
+		+r(768)
+			display: none
+
+	&__header-total
+		+r(768)
+			display: none
+
+//=============================================
+// Cart Item
+//=============================================
+.cart-item
+	display: grid
+	grid-template-columns: 1fr 2.5fr 1fr
+	gap: 30px
+	padding: 30px 0
+	border-bottom: 1px solid rgba($b, 0.1)
+	+r(1200)
+		grid-template-columns: 1fr 2fr 1fr
+		gap: 20px
+	+r(768)
+		grid-template-columns: 1fr
+		gap: 15px
+		padding: 20px 0
+
+	// Колонка 1: Фото
+	&__image
+		width: 100%
+		background: rgba(0, 0, 0, 0.03)
+		+flex
+		padding: 20px
+		+r(768)
+			padding: 10px
+			max-width: 150px
+
+		a
+			display: block
+			width: 100%
+
+		img
+			width: 100%
+			height: auto
+			object-fit: contain
+
+	// Колонка 2: Инфо
+	&__info
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+
+	&__top
+		margin-bottom: 20px
+		+r(768)
+			margin-bottom: 15px
+
+	&__title
+		font-size: 24px
+		+med
+		margin-bottom: 10px !important
+		+r(768)
+			font-size: 18px
+
+		a
+			color: $b
+			transition: opacity .3s ease
+
+			&:hover
+				opacity: 0.7
+
+	&__price
+		font-size: 18px
+		+med
+		color: $b
+		+r(768)
+			font-size: 16px
+
+	&__meta
+		display: flex
+		gap: 30px
+		+r(768)
+			gap: 20px
+
+	&__attribute
+		display: flex
+		align-items: center
+		gap: 10px
+		font-size: 16px
+		+r(768)
+			font-size: 14px
+
+	&__attribute-label
+		color: rgba($b, 0.6)
+
+	&__attribute-value
+		color: $b
+		+med
+		display: flex
+		align-items: center
+
+	.color-dot
+		width: 20px
+		height: 20px
+		+br(50%)
+		border: 1px solid rgba($b, 0.2)
+
+	// Колонка 3: Действия
+	&__actions
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		align-items: flex-end
+		+r(768)
+			flex-direction: row
+			align-items: center
+			justify-content: space-between
+
+	&__remove
+		display: flex
+		align-items: center
+		gap: 8px
+		color: #F52222
+		font-size: 14px
+		transition: opacity .3s ease
+
+		&:hover
+			opacity: 0.7
+
+		svg
+			width: 16px
+			height: 16px
+
+	&__quantity
+		display: flex
+		align-items: center
+		height: 40px
+		background: rgba(0, 0, 0, 0.03)
+
+		.qty-btn
+			width: 40px
+			height: 100%
+			background: transparent
+			border: none
+			font-size: 18px
+			cursor: pointer
+			transition: all .2s ease
+			display: flex
+			align-items: center
+			justify-content: center
+
+			&:hover
+				background: rgba($b, 0.05)
+
+		.qty-input
+			width: 60px
+			height: 100%
+			border: none
+			background: transparent
+			font-size: 16px
+			text-align: center
+			+med
+
+//=============================================
+// Cart Totals
+//=============================================
+.cart-totals
+	background: rgba(0, 0, 0, 0.02)
+	padding: 30px
+	position: sticky
+	top: 100px
+	+r(1200)
+		position: relative
+		top: 0
+	+r(768)
+		padding: 20px
+
+	&__title
+		font-size: 24px
+		+med
+		margin-bottom: 30px !important
+		+r(768)
+			font-size: 20px
+			margin-bottom: 20px !important
+
+	&__coupon
+		margin-bottom: 30px
+		+r(768)
+			margin-bottom: 20px
+
+	&__coupon-toggle
+		width: 100%
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 15px 20px
+		background: $w
+		border: 1px solid rgba($b, 0.1)
+		font-size: 16px
+		cursor: pointer
+		transition: all .3s ease
+		+r(768)
+			font-size: 14px
+			padding: 12px 15px
+
+		&:hover
+			border-color: $b
+
+		svg
+			transition: transform .3s ease
+
+	&__row
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 20px 0
+		font-size: 16px
+		+r(768)
+			padding: 15px 0
+			font-size: 14px
+
+	&__total
+		border-top: 1px solid rgba($b, 0.1)
+		font-size: 18px
+		+med
+		margin-bottom: 30px
+		+r(768)
+			font-size: 16px
+			margin-bottom: 20px
+
+	&__price
+		font-size: 24px
+		+med
+		+r(768)
+			font-size: 20px
+
+	&__checkout
+		width: 100%
+		text-align: center
+		padding: 18px 20px
+		font-size: 16px
+		text-transform: uppercase
+		+r(768)
+			font-size: 14px
+			padding: 15px 20px

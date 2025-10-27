@@ -1,0 +1,192 @@
+---
+layout: default
+title: Checkout | Geo Shop
+pagename: checkout
+---
+
+	<section class="catalog__head">
+		<div class="catalog__head-title">
+			<h1 class="page-title">Checkout</h1>
+		</div>
+	</section>
+
+	<section class="checkout-page woocommerce-checkout">
+		<div class="container">
+			<form name="checkout" method="post" class="checkout woocommerce-checkout" action="">
+				<div class="checkout-page__wrapper">
+					<!-- Левая колонка с формами -->
+					<div class="checkout-page__form">
+						
+						<!-- Contact information -->
+						<div class="checkout-section">
+							<h3 class="checkout-section__title">Contact information</h3>
+							<p class="checkout-section__subtitle">We'll use this email to send you details and updates about your order.</p>
+							
+							<div class="form-row">
+								<input type="email" class="input-text" name="billing_email" id="billing_email" placeholder="Email address" required />
+							</div>
+							
+							<p class="checkout-notice">You are currently checking out as a guest.</p>
+						</div>
+
+						<!-- Billing address -->
+						<div class="checkout-section">
+							<h3 class="checkout-section__title">Billing address</h3>
+							<p class="checkout-section__subtitle">Enter the billing address that matches your payment method.</p>
+							
+							<div class="form-row">
+								<select class="country_select" name="billing_country" required>
+									<option value="">Country/Region</option>
+									<option value="US">United States</option>
+									<option value="LV">Latvia</option>
+									<option value="EE">Estonia</option>
+									<option value="LT">Lithuania</option>
+								</select>
+							</div>
+
+							<div class="form-row form-row-grid">
+								<input type="text" class="input-text" name="billing_first_name" placeholder="First Name" required />
+								<input type="text" class="input-text" name="billing_last_name" placeholder="Last Name" required />
+							</div>
+
+							<div class="form-row">
+								<input type="text" class="input-text" name="billing_address_1" placeholder="Adress" required />
+							</div>
+
+							<div class="form-row form-row-grid">
+								<input type="text" class="input-text" name="billing_city" placeholder="City" required />
+								<select class="state_select" name="billing_state">
+									<option value="">State/County</option>
+									<option value="CA">California</option>
+									<option value="NY">New York</option>
+									<option value="TX">Texas</option>
+								</select>
+							</div>
+
+							<div class="form-row form-row-grid">
+								<input type="text" class="input-text" name="billing_postcode" placeholder="Postal code" required />
+								<input type="tel" class="input-text" name="billing_phone" placeholder="Phone (optional)" />
+							</div>
+						</div>
+
+						<!-- Payment options -->
+						<div class="checkout-section">
+							<h3 class="checkout-section__title">Payment options</h3>
+							
+							<div class="payment-methods">
+								<div class="payment-method active">
+									<input type="radio" id="payment_cod" name="payment_method" value="cod" checked />
+									<label for="payment_cod">
+										<div class="payment-method__header">
+											<span class="payment-method__title">Cash on delivery</span>
+											<span class="payment-method__icon">
+												<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<circle cx="10" cy="10" r="9" stroke="#176DAA" stroke-width="2"/>
+													<circle cx="10" cy="10" r="5" fill="#176DAA"/>
+												</svg>
+											</span>
+										</div>
+										<p class="payment-method__desc">Pay with cash upon delivery.</p>
+									</label>
+								</div>
+
+								<div class="payment-method">
+									<input type="radio" id="payment_visa" name="payment_method" value="visa" />
+									<label for="payment_visa">
+										<div class="payment-method__header">
+											<span class="payment-method__title">Visa</span>
+											<span class="payment-method__icon">
+												<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<circle cx="10" cy="10" r="9" stroke="#000" stroke-width="2"/>
+												</svg>
+											</span>
+										</div>
+										<p class="payment-method__desc">Pay with cash upon delivery.</p>
+										<div class="payment-method__logo">
+											<img src="assets/img/visa.png" alt="Visa" width="60">
+										</div>
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<!-- Terms -->
+						<div class="checkout-terms">
+							<p>By proceeding with your purchase you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
+						</div>
+
+						<!-- Buttons -->
+						<div class="checkout-actions">
+							<a href="cart.html" class="btn btn--secondary">Return to cart</a>
+							<button type="submit" class="btn btn--primary" name="woocommerce_checkout_place_order">Place order</button>
+						</div>
+					</div>
+
+					<!-- Правая колонка - Order summary -->
+					<div class="checkout-page__sidebar">
+						<div class="order-summary">
+							<h3 class="order-summary__title">Order summary</h3>
+							
+							<div class="order-summary__items">
+								<!-- Item 1 -->
+								<div class="order-summary__item">
+									<div class="order-summary__item-image">
+										<img src="assets/img/item-1.png" alt="Hauberk tech pocket">
+									</div>
+									<div class="order-summary__item-details">
+										<h4 class="order-summary__item-title">Hauberk tech pocket</h4>
+										<p class="order-summary__item-price">65,00 €</p>
+										<a href="#" class="order-summary__item-remove">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M14 4H13V14C13 14.2652 12.8946 14.5195 12.707 14.707C12.5195 14.8946 12.2652 15 12 15H4C3.73478 15 3.48051 14.8946 3.29297 14.707C3.10543 14.5195 3 14.2652 3 14V4H2V3H14V4ZM4 14H12V4H4V14ZM7 12H6V6H7V12ZM10 12H9V6H10V12ZM10 1V2H6V1H10Z" fill="#F52222"/>
+											</svg>
+											Remove
+										</a>
+									</div>
+								</div>
+
+								<!-- Item 2 -->
+								<div class="order-summary__item">
+									<div class="order-summary__item-image">
+										<img src="assets/img/item-1.png" alt="Hauberk tech pocket">
+									</div>
+									<div class="order-summary__item-details">
+										<h4 class="order-summary__item-title">Hauberk tech pocket</h4>
+										<p class="order-summary__item-price">65,00 €</p>
+										<a href="#" class="order-summary__item-remove">
+											<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M14 4H13V14C13 14.2652 12.8946 14.5195 12.707 14.707C12.5195 14.8946 12.2652 15 12 15H4C3.73478 15 3.48051 14.8946 3.29297 14.707C3.10543 14.5195 3 14.2652 3 14V4H2V3H14V4ZM4 14H12V4H4V14ZM7 12H6V6H7V12ZM10 12H9V6H10V12ZM10 1V2H6V1H10Z" fill="#F52222"/>
+											</svg>
+											Remove
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- Coupon -->
+							<div class="order-summary__coupon">
+								<button type="button" class="order-summary__coupon-toggle">
+									<span>Add coupons</span>
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+									</svg>
+								</button>
+							</div>
+
+							<!-- Totals -->
+							<div class="order-summary__totals">
+								<div class="order-summary__row">
+									<span>Subtotal</span>
+									<span>130,00 €</span>
+								</div>
+								<div class="order-summary__row order-summary__total">
+									<span>Total to pay:</span>
+									<span class="order-summary__total-price">140,00 €</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>

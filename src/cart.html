@@ -1,0 +1,143 @@
+---
+layout: default
+title: Cart | Geo Shop
+---
+
+	<section class="catalog__head">
+		<div class="catalog__head-title">
+			<h1 class="page-title">Cart</h1>
+		</div>
+	</section>
+
+<section class="cart-page">
+	<div class="container">
+		<form class="woocommerce-cart-form" action="" method="post">
+			<div class="cart-page__wrapper">
+				<!-- Левая колонка с товарами -->
+				<div class="cart-page__products">
+					<div class="cart-page__header">
+						<div class="cart-page__header-product">Product</div>
+						<div class="cart-page__header-total">Total</div>
+					</div>
+
+					<!-- Товар 1 -->
+					<div class="cart-item woocommerce-cart-form__cart-item">
+						<!-- Колонка 1: Фото -->
+						<div class="cart-item__image">
+							<a href="#">
+								<img src="assets/img/item-1.png" alt="Hauberk tech pocket">
+							</a>
+						</div>
+
+						<!-- Колонка 2: Инфо -->
+						<div class="cart-item__info">
+							<div class="cart-item__top">
+								<h3 class="cart-item__title">
+									<a href="#">Hauberk tech pocket</a>
+								</h3>
+								<div class="cart-item__price">65,00 €</div>
+							</div>
+							<div class="cart-item__meta">
+								<div class="cart-item__attribute">
+									<span class="cart-item__attribute-label">Color</span>
+									<span class="cart-item__attribute-value">
+										<span class="color-dot" style="background: #F9D71C;"></span>
+									</span>
+								</div>
+								<div class="cart-item__attribute">
+									<span class="cart-item__attribute-label">Size</span>
+									<span class="cart-item__attribute-value">M</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Колонка 3: Действия -->
+						<div class="cart-item__actions">
+							<a href="#" class="cart-item__remove">
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M14 4H13V14C13 14.2652 12.8946 14.5195 12.707 14.707C12.5195 14.8946 12.2652 15 12 15H4C3.73478 15 3.48051 14.8946 3.29297 14.707C3.10543 14.5195 3 14.2652 3 14V4H2V3H14V4ZM4 14H12V4H4V14ZM7 12H6V6H7V12ZM10 12H9V6H10V12ZM10 1V2H6V1H10Z" fill="#F52222"/>
+								</svg>
+								Remove
+							</a>
+							<div class="cart-item__quantity">
+								<button type="button" class="qty-btn qty-minus">-</button>
+								<input type="number" class="qty-input" value="1" min="1" />
+								<button type="button" class="qty-btn qty-plus">+</button>
+							</div>
+						</div>
+					</div>
+
+					<!-- Товар 2 -->
+					<div class="cart-item woocommerce-cart-form__cart-item">
+						<!-- Колонка 1: Фото -->
+						<div class="cart-item__image">
+							<a href="#">
+								<img src="assets/img/item-1.png" alt="Hauberk tech pocket">
+							</a>
+						</div>
+
+						<!-- Колонка 2: Инфо -->
+						<div class="cart-item__info">
+							<div class="cart-item__top">
+								<h3 class="cart-item__title">
+									<a href="#">Hauberk tech pocket</a>
+								</h3>
+								<div class="cart-item__price">65,00 €</div>
+							</div>
+							<div class="cart-item__meta">
+								<div class="cart-item__attribute">
+									<span class="cart-item__attribute-label">Color</span>
+									<span class="cart-item__attribute-value">
+										<span class="color-dot" style="background: #F9D71C;"></span>
+									</span>
+								</div>
+								<div class="cart-item__attribute">
+									<span class="cart-item__attribute-label">Size</span>
+									<span class="cart-item__attribute-value">M</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Колонка 3: Действия -->
+						<div class="cart-item__actions">
+							<a href="#" class="cart-item__remove">
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M14 4H13V14C13 14.2652 12.8946 14.5195 12.707 14.707C12.5195 14.8946 12.2652 15 12 15H4C3.73478 15 3.48051 14.8946 3.29297 14.707C3.10543 14.5195 3 14.2652 3 14V4H2V3H14V4ZM4 14H12V4H4V14ZM7 12H6V6H7V12ZM10 12H9V6H10V12ZM10 1V2H6V1H10Z" fill="#F52222"/>
+								</svg>
+								Remove
+							</a>
+							<div class="cart-item__quantity">
+								<button type="button" class="qty-btn qty-minus">-</button>
+								<input type="number" class="qty-input" value="1" min="1" />
+								<button type="button" class="qty-btn qty-plus">+</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Правая колонка с итогами -->
+				<div class="cart-page__sidebar">
+					<div class="cart-totals">
+						<h2 class="cart-totals__title">Cart totals</h2>
+						
+						<div class="cart-totals__coupon">
+							<button type="button" class="cart-totals__coupon-toggle">
+								<span>Add coupons</span>
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+								</svg>
+							</button>
+						</div>
+
+						<div class="cart-totals__row cart-totals__total">
+							<span>Estimated total</span>
+							<span class="cart-totals__price">130,00 €</span>
+						</div>
+
+						<a href="#" class="btn btn--primary cart-totals__checkout">Proceed to Checkout</a>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>
