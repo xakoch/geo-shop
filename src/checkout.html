@@ -19,10 +19,12 @@ pagename: checkout
 						
 						<!-- Contact information -->
 						<div class="checkout-section">
-							<h3 class="checkout-section__title">Contact information</h3>
-							<p class="checkout-section__subtitle">We'll use this email to send you details and updates about your order.</p>
+							<div class="checkout-section__header">
+								<h3 class="checkout-section__title">Contact information</h3>
+								<p class="checkout-section__subtitle">We'll use this email to send you details and updates about your order.</p>
+							</div>
 							
-							<div class="form-row">
+							<div class="form-row form-row-grid">
 								<input type="email" class="input-text" name="billing_email" id="billing_email" placeholder="Email address" required />
 							</div>
 							
@@ -31,10 +33,12 @@ pagename: checkout
 
 						<!-- Billing address -->
 						<div class="checkout-section">
-							<h3 class="checkout-section__title">Billing address</h3>
-							<p class="checkout-section__subtitle">Enter the billing address that matches your payment method.</p>
+							<div class="checkout-section__header">
+								<h3 class="checkout-section__title">Billing address</h3>
+								<p class="checkout-section__subtitle">Enter the billing address that matches your payment method.</p>
+							</div>
 							
-							<div class="form-row">
+							<div class="form-row form-row-grid">
 								<select class="country_select" name="billing_country" required>
 									<option value="">Country/Region</option>
 									<option value="US">United States</option>
@@ -49,7 +53,7 @@ pagename: checkout
 								<input type="text" class="input-text" name="billing_last_name" placeholder="Last Name" required />
 							</div>
 
-							<div class="form-row">
+							<div class="form-row form-row-grid">
 								<input type="text" class="input-text" name="billing_address_1" placeholder="Adress" required />
 							</div>
 
@@ -71,37 +75,43 @@ pagename: checkout
 
 						<!-- Payment options -->
 						<div class="checkout-section">
-							<h3 class="checkout-section__title">Payment options</h3>
+							<div class="checkout-section__header">
+								<h3 class="checkout-section__title">Payment options</h3>
+							</div>
 							
 							<div class="payment-methods">
 								<div class="payment-method active">
 									<input type="radio" id="payment_cod" name="payment_method" value="cod" checked />
 									<label for="payment_cod">
-										<div class="payment-method__header">
-											<span class="payment-method__title">Cash on delivery</span>
-											<span class="payment-method__icon">
-												<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<circle cx="10" cy="10" r="9" stroke="#176DAA" stroke-width="2"/>
-													<circle cx="10" cy="10" r="5" fill="#176DAA"/>
-												</svg>
-											</span>
+										<div class="payment-method__info">
+											<div class="payment-method__header">
+												<span class="payment-method__title">Cash on delivery</span>
+												<span class="payment-method__icon">
+													<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<circle cx="10" cy="10" r="9" stroke="#176DAA" stroke-width="2"/>
+														<circle cx="10" cy="10" r="5" fill="#176DAA"/>
+													</svg>
+												</span>
+											</div>
+											<p class="payment-method__desc">Pay with cash upon delivery.</p>
 										</div>
-										<p class="payment-method__desc">Pay with cash upon delivery.</p>
 									</label>
 								</div>
 
 								<div class="payment-method">
 									<input type="radio" id="payment_visa" name="payment_method" value="visa" />
 									<label for="payment_visa">
-										<div class="payment-method__header">
-											<span class="payment-method__title">Visa</span>
-											<span class="payment-method__icon">
-												<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-													<circle cx="10" cy="10" r="9" stroke="#000" stroke-width="2"/>
-												</svg>
-											</span>
+										<div class="payment-method__info">
+											<div class="payment-method__header">
+												<span class="payment-method__title">Visa</span>
+												<span class="payment-method__icon">
+													<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<circle cx="10" cy="10" r="9" stroke="#000" stroke-width="2"/>
+													</svg>
+												</span>
+											</div>
+											<p class="payment-method__desc">Pay with cash upon delivery.</p>
 										</div>
-										<p class="payment-method__desc">Pay with cash upon delivery.</p>
 										<div class="payment-method__logo">
 											<img src="assets/img/visa.png" alt="Visa" width="60">
 										</div>
@@ -134,8 +144,10 @@ pagename: checkout
 										<img src="assets/img/item-1.png" alt="Hauberk tech pocket">
 									</div>
 									<div class="order-summary__item-details">
-										<h4 class="order-summary__item-title">Hauberk tech pocket</h4>
-										<p class="order-summary__item-price">65,00 €</p>
+										<div class="order-summary__item-details__top">
+											<h4 class="order-summary__item-title">Hauberk tech pocket</h4>
+											<p class="order-summary__item-price">65,00 €</p>
+										</div>
 										<a href="#" class="order-summary__item-remove">
 											<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M14 4H13V14C13 14.2652 12.8946 14.5195 12.707 14.707C12.5195 14.8946 12.2652 15 12 15H4C3.73478 15 3.48051 14.8946 3.29297 14.707C3.10543 14.5195 3 14.2652 3 14V4H2V3H14V4ZM4 14H12V4H4V14ZM7 12H6V6H7V12ZM10 12H9V6H10V12ZM10 1V2H6V1H10Z" fill="#F52222"/>
@@ -151,8 +163,10 @@ pagename: checkout
 										<img src="assets/img/item-1.png" alt="Hauberk tech pocket">
 									</div>
 									<div class="order-summary__item-details">
-										<h4 class="order-summary__item-title">Hauberk tech pocket</h4>
-										<p class="order-summary__item-price">65,00 €</p>
+										<div class="order-summary__item-details__top">
+											<h4 class="order-summary__item-title">Hauberk tech pocket</h4>
+											<p class="order-summary__item-price">65,00 €</p>
+										</div>
 										<a href="#" class="order-summary__item-remove">
 											<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 												<path d="M14 4H13V14C13 14.2652 12.8946 14.5195 12.707 14.707C12.5195 14.8946 12.2652 15 12 15H4C3.73478 15 3.48051 14.8946 3.29297 14.707C3.10543 14.5195 3 14.2652 3 14V4H2V3H14V4ZM4 14H12V4H4V14ZM7 12H6V6H7V12ZM10 12H9V6H10V12ZM10 1V2H6V1H10Z" fill="#F52222"/>

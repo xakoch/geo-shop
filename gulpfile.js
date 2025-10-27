@@ -55,7 +55,8 @@ function serve() {
     browserSync.init({
         server: {
             baseDir: "./" + distPath
-        }
+        },
+        open: false  // Добавь эту строку
     });
 }
 

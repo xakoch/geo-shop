@@ -88,87 +88,87 @@
       font-size: 16px
       +semi
 
-.account-form-wrapper
-   display: none
-   &.active
-      display: block
+   .account-form-wrapper
+      display: none
+      &.active
+         display: block
 
-.form-row
-   margin-bottom: 20px
+   .form-row
+      margin-bottom: 20px
 
-   label
-      display: block
-      font-size: 14px
-      font-weight: 600
-      color: $b
-      margin-bottom: 8px
-
-   input[type="text"],
-   input[type="email"],
-   input[type="password"]
-      width: 100%
-      padding: 12px 15px 18px 0
-      border-bottom: 1px solid #d2d2d2
-      font-size: 16px
-      +semi
-      color: $b
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
-      &::placeholder
+      label
+         display: block
+         font-size: 14px
+         font-weight: 600
          color: $b
+         margin-bottom: 8px
 
-.form-row-remember
-   display: flex
-   align-items: center
-   margin-bottom: 25px
+      input[type="text"],
+      input[type="email"],
+      input[type="password"]
+         width: 100%
+         padding: 12px 15px 18px 0
+         border-bottom: 1px solid #d2d2d2
+         font-size: 16px
+         +semi
+         color: $b
+         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+         &::placeholder
+            color: $b
 
-   label
+   .form-row-remember
       display: flex
       align-items: center
-      cursor: pointer
-      margin-bottom: 0
+      margin-bottom: 25px
 
-   input[type="checkbox"]
-      appearance: none
-      -webkit-appearance: none
-      width: 20px
-      height: 20px
-      border: 2px solid #d2d2d2
-      +br(4px)
-      margin-right: 10px
-      cursor: pointer
-      position: relative
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+      label
+         display: flex
+         align-items: center
+         cursor: pointer
+         margin-bottom: 0
 
-      &:checked
-         background: $primary
-         border-color: $primary
+      input[type="checkbox"]
+         appearance: none
+         -webkit-appearance: none
+         width: 20px
+         height: 20px
+         border: 2px solid #d2d2d2
+         +br(4px)
+         margin-right: 10px
+         cursor: pointer
+         position: relative
+         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
 
-         &::after
-            content: ''
-            position: absolute
-            left: 5px
-            top: 2px
-            width: 6px
-            height: 10px
-            border: solid $w
-            border-width: 0 2px 2px 0
-            transform: rotate(45deg)
+         &:checked
+            background: $primary
+            border-color: $primary
 
-      &:hover
-         border-color: $primary
+            &::after
+               content: ''
+               position: absolute
+               left: 5px
+               top: 2px
+               width: 6px
+               height: 10px
+               border: solid $w
+               border-width: 0 2px 2px 0
+               transform: rotate(45deg)
 
-   span
-      font-size: 14px
-      color: $b
-      +semi
+         &:hover
+            border-color: $primary
 
-.lost-password
-   text-align: center
-   margin: 15px 0 0
-   a
-      font-size: 14px
-      color: $b
-      +semi
-      transition: color 0.3s ease
-      &:hover
-         color: $primary
+      span
+         font-size: 14px
+         color: $b
+         +semi
+
+   .lost-password
+      text-align: center
+      margin: 15px 0 0
+      a
+         font-size: 14px
+         color: $b
+         +semi
+         transition: color 0.3s ease
+         &:hover
+            color: $primary

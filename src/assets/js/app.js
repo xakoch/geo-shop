@@ -87,7 +87,6 @@ function initLenis() {
     }
 }
 
-
 /**
  * Устанавливает CSS-переменную для мобильных устройств
  */
@@ -602,6 +601,44 @@ function initProductGallery() {
 }
 
 /**
+ * Инициализирует hero slider
+ */
+function initHeroSlider() {
+    try {
+        const heroSlider = document.querySelector('.heroSlider');
+
+        if (!heroSlider) {
+            return;
+        }
+
+        if (typeof Swiper === 'undefined') {
+            console.warn('Swiper library not loaded');
+            return;
+        }
+
+        // Инициализируем Swiper для hero slider
+        const swiper = new Swiper('.heroSlider', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        console.log('Hero slider initialized successfully');
+
+    } catch (error) {
+        console.error("Error in initHeroSlider:", error);
+    }
+}
+
+/**
  * Запускает все скрипты на новой странице
  */
 function initScript() {
@@ -613,6 +650,7 @@ function initScript() {
         initFancybox();
         initMobileMenu();
         initProductGallery();
+        initHeroSlider();
     } catch (error) {
         console.error("Error in " + arguments.callee.name + ":", error);
     }
