@@ -47,8 +47,8 @@
 	grid-template-columns: 1fr 2.5fr 1fr
 	gap: 30px
 	padding: 24px 0
-	border-bottom: 1px solid rgba($b, 0.1)
-	&:last-child
+	border-top: 1px solid rgba($b, 0.1)
+	&:first-child
 		border-color: transparent
 	+r(1200)
 		grid-template-columns: 1fr 2fr 1fr
@@ -115,9 +115,9 @@
 		font-size: 16px
 		&:first-child
 			padding-bottom: 16px
-			border-bottom: 1px solid rgba(0, 0, 0, 0.1)
 		&:last-child
 			padding-top: 16px
+			border-top: 1px solid rgba(0, 0, 0, 0.1)
 		+r(768)
 			font-size: 14px
 
