@@ -45,6 +45,12 @@ body.account-open
     display: flex
     flex-direction: column
     z-index: 100000
+    height: 100vh
+    overflow: hidden
+    +r(767)
+        width: 100%
+        max-width: 90%
+        right: -100%
 
 .mini-cart-header
     display: flex
@@ -52,6 +58,9 @@ body.account-open
     align-items: center
     padding: 20px 20px 0 20px
     background: $w
+    +r(991)
+        padding: 20px
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08)
 
 .mini-cart-title
     text-align: center
@@ -61,7 +70,12 @@ body.account-open
 .mini-cart-body
     flex: 1
     overflow-y: auto
+    overflow-x: hidden
     padding: 25px
+    -webkit-overflow-scrolling: touch
+    overscroll-behavior: contain
+    +r(767)
+        padding: 20px
 
 .cart_list
     border-top: 1px solid $b
@@ -81,6 +95,10 @@ body.account-open
     background: rgba(0, 0, 0, 0.03)
     padding: 15px
     +flex
+
+    img
+        max-height: 80px
+        object-fit: contain
 
 .mini-cart-item-details
     display: flex

@@ -67,6 +67,13 @@ function initLenis() {
             smoothTouch: false,
             touchMultiplier: 2,
             infinite: false,
+            prevent: (node) => {
+                // Разрешаем нативный скролл внутри попапов корзины и аккаунта
+                return node.classList.contains('mini-cart-body') ||
+                       node.classList.contains('account-body') ||
+                       node.closest('.mini-cart-body') ||
+                       node.closest('.account-body');
+            }
         });
 
         // Экспортируем в глобальную область для доступа из других скриптов
@@ -334,9 +341,12 @@ function initMobileMenu() {
         // Функция открытия меню с анимацией
         function openMenu() {
             if (isMenuOpen) return;
-            
+
             isMenuOpen = true;
             body.classList.add('menu-open');
+
+            // Добавляем класс active для отображения меню
+            mobileMenu.classList.add('active');
 
             // GSAP анимация бургера и меню
             if (typeof gsap !== 'undefined') {
@@ -365,19 +375,19 @@ function initMobileMenu() {
                 });
 
                 // Устанавливаем начальные состояния для меню
-                gsap.set(navLines, { 
+                gsap.set(navLines, {
                     scaleX: 0,
                     opacity: 0,
                     transformOrigin: 'left center',
                     force3D: true
                 });
-                gsap.set(navLinks, { 
-                    opacity: 0, 
+                gsap.set(navLinks, {
+                    opacity: 0,
                     y: 50,
                     force3D: true
                 });
-                gsap.set(menuAction, { 
-                    opacity: 0, 
+                gsap.set(menuAction, {
+                    opacity: 0,
                     y: 60,
                     force3D: true
                 });
@@ -424,13 +434,14 @@ function initMobileMenu() {
             } else {
                 // Fallback без GSAP
                 burger.classList.add('active');
+                mobileMenu.classList.add('active');
             }
         }
 
         // Функция закрытия меню
         function closeMenu() {
             if (!isMenuOpen) return;
-            
+
             isMenuOpen = false;
             body.classList.remove('menu-open');
 
@@ -443,7 +454,11 @@ function initMobileMenu() {
                     opacity: 0,
                     visibility: 'hidden',
                     duration: 0.3,
-                    ease: 'power2.out'
+                    ease: 'power2.out',
+                    onComplete: function() {
+                        // Удаляем класс active после завершения анимации
+                        mobileMenu.classList.remove('active');
+                    }
                 });
 
                 // Возвращаем бургер в исходное состояние
@@ -570,7 +585,17 @@ function initMobileMenu() {
                 closeMenu();
             }
         });
-        
+
+        // Закрытие меню при клике на account-link в мобильном меню
+        const accountLinks = mobileMenu.querySelectorAll('.account-link');
+        accountLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (isMenuOpen) {
+                    closeMenu();
+                }
+            });
+        });
+
     } catch (error) {
         console.error("Error in " + arguments.callee.name + ":", error);
     }

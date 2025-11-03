@@ -10,7 +10,7 @@
 
 	&__wrapper
 		display: grid
-		grid-template-columns: 1fr 450px
+		grid-template-columns: 3fr 1fr
 		gap: 20px
 		+r(1200)
 			grid-template-columns: 1fr
@@ -193,9 +193,9 @@ select.state_select
 		width: 100%
 		padding: 18px 20px
 		font-size: 16px
-		text-align: right
+		text-align: center
 		text-transform: uppercase
-		color: $b
+		color: $primary
 		+trans
 		+semi
 		+r(768)
@@ -204,8 +204,10 @@ select.state_select
 
 	.btn--secondary
 		order: 1
+		border: 2px solid $primary
 		&:hover
-			background: rgba(0, 0, 0, 0.03)
+			background: $primary
+			color: $w
 		+r(768)
 			order: 2
 

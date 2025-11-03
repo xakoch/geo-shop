@@ -115,7 +115,8 @@ jQuery(function($) {
         }
     }
 
-    $accountLink.on('click', function(e) {
+    // Используем event delegation для поддержки всех .account-link включая в мобильном меню
+    $(document).on('click', '.account-link', function(e) {
         e.preventDefault();
         openAccountSidebar();
     });

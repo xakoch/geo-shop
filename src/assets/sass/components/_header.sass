@@ -18,10 +18,11 @@
 		box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1)
 		
 		.header__logo img
-			// transform: translateY(-60px) translateX(-65px) scale(.5)
 			transform: translateY(-24px) translateX(-24px) scale(.7)
 			+r(1440)
-				transform: translateY(-20px) translateX(-21px) scale(.7)
+				transform: translateY(-21px) translateX(-21px) scale(.7)
+			+r(991)
+				transform: translateY(0) translateX(-12px) scale(.8)
 
 	// При открытом мобильном меню хедер должен быть поверх
 	body.menu-open &
@@ -31,13 +32,12 @@
 		right: 0
 		z-index: 9999
 		background: transparent
-		
-		+r(1024)
-			// Скрываем все кроме бургера на мобильных
+
+		+r(991)
+			// Скрываем все кроме бургера, корзины и лого на мобильных
 			.header__menu,
 			.header__action,
-			.header__cta,
-			.header__logo
+			.header__cta
 				display: none
 
 	&__inner
@@ -47,9 +47,13 @@
 		height: 100%
 		width: calc(100% - 240px)
 		padding-right: 80px
-		+r(1024)
+		+r(1440)
+			width: calc(100% - 180px)
+			padding-right: 40px
+		+r(991)
 			padding: 15px 20px
 			align-items: center
+			width: 100%
 
 	&__left--link
 		display: flex
@@ -73,6 +77,8 @@
 		display: flex
 		align-items: center
 		grid-gap: 20px
+		+r(991)
+			grid-gap: 15px
 
 		a
 			display: block
@@ -84,6 +90,10 @@
 			color: $b
 			height: 100%
 			transition: color .25s ease
+
+		.account-link
+			+r(991)
+				display: none
 
 		.cart
 			display: flex
@@ -105,29 +115,29 @@
 		top: 0
 		left: 80px
 		z-index: 2
-		+r(1024)
+		+r(1440)
 			left: 40px
-		
+		+r(991)
+			position: relative
+			left: 0
+			top: 0
+
 		img
 			transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)
 			// +r(1600)
 				// max-width: 140px
 			+r(1440)
 				max-width: 140px
+			+r(991)
+				max-width: 120px
 
 	&__action
 		display: flex
 		align-items: center
 		margin-left: 20px
 		grid-gap: 25px
-		// +r(1600)
-		// 	margin: 0 30px 0 80px
-		// +r(1440)
-		// 	margin: 0 20px 0 50px
-		// +r(1200)
-		// 	margin: 0 20px 0 30px
-		// +r(1024)
-		// 	display: none
+		+r(991)
+			display: none
 
 	&__call
 		color: $b
@@ -141,7 +151,7 @@
 			font-size: 16px
 		+r(1200)
 			font-size: 14px
-		+r(1024)
+		+r(991)
 			display: none
 
 	&__lang a
@@ -171,7 +181,7 @@
 			font-size: 16px
 		+r(1440)
 			height: 60px
-		+r(1024)
+		+r(991)
 			display: none
 
 // ===========================
@@ -248,7 +258,7 @@
 	cursor: pointer
 	padding: 0
 	z-index: 9999
-	+r(1024)
+	+r(991)
 		display: flex
 
 	span
@@ -261,7 +271,7 @@
 
 	// При открытом мобильном меню делаем бургер белым
 	body.menu-open &
-		+r(1024)
+		+r(991)
 			span
 				background-color: $w
 
@@ -276,6 +286,7 @@
 	height: 100vh
 	background: #021034
 	z-index: 9998
+	display: none
 	opacity: 0
 	visibility: hidden
 	will-change: opacity, visibility, transform
@@ -284,19 +295,22 @@
 	overflow-x: hidden
 	-webkit-overflow-scrolling: touch
 	overscroll-behavior: contain
-	
+	+rmin(992)
+		display: none !important
+
 	&.active
+		display: block
 		opacity: 1
 		visibility: visible
 
 	&__content
 		width: 100%
 		max-width: 400px
-		padding: 100px 20px 100px
+		padding: 100px 20px 60px
 		margin: 0 auto
 		display: flex
 		flex-direction: column
-		min-height: calc(100vh - 40px)
+		min-height: 100vh
 
 	&__menu
 		list-style: none
@@ -334,6 +348,21 @@
 			&:focus
 				color: $primary
 
+	&__separator
+		margin-top: 20px
+
+		.nav-link-wrap
+			padding-top: 20px
+			border-top: 1px solid rgba(255, 255, 255, 0.2)
+
+		a
+			color: rgba(255, 255, 255, 0.8)
+			font-size: 1em
+
+			&:hover,
+			&:focus
+				color: $w
+
 	&__action
 		margin-top: 40px
 		display: flex
@@ -369,10 +398,6 @@
 				background: #3ca5ef
 
 	&__lang
-		margin-top: 20px
-		margin-bottom: 40px
-		padding-bottom: 20px
-
 		.language-chooser
 			position: static
 			top: 0
@@ -383,26 +408,34 @@
 			visibility: visible
 
 			span
-				font-size: 16px
+				font-size: 14px
 				+med
 				color: #021034
 				background: $w
 				+br(8px)
-				padding: 10px 18px
+				padding: 10px 16px
 				display: flex
 				align-items: center
 				justify-content: center
+				min-width: 50px
+				transition: background 0.3s ease
 
 		ul
-			grid-gap: 15px
+			grid-gap: 10px
 			display: flex
 			align-items: center
+			flex-wrap: wrap
 
-		li.active
+		li
 			padding: 0
 			border-bottom: none
 			margin-bottom: 0
-			opacity: .5
+
+			&.active
+				opacity: .5
+
+			&:not(.active) a:hover span
+				background: #3ca5ef
 
 
 // ===========================
@@ -417,7 +450,10 @@ body.menu-open
 	position: fixed
 	width: 100%
 	height: 100vh
-	
-	+r(1024)
+
+	.cart
+		opacity: 0
+
+	+r(991)
 		height: 100vh
 		touch-action: none

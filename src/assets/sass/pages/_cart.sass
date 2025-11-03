@@ -6,7 +6,7 @@
 	+r(1200)
 		padding: 60px 0
 	+r(768)
-		padding: 40px 0
+		padding: 30px 0
 
 	&__wrapper
 		display: grid
@@ -15,6 +15,8 @@
 		+r(1200)
 			grid-template-columns: 1fr
 			gap: 30px
+		+r(768)
+			gap: 20px
 
 	&__products
 		display: flex
@@ -54,9 +56,9 @@
 		grid-template-columns: 1fr 2fr 1fr
 		gap: 20px
 	+r(768)
-		grid-template-columns: 1fr
-		gap: 15px
-		padding: 20px 0
+		grid-template-columns: 120px 1fr
+		gap: 12px
+		padding: 15px 0
 
 	// Колонка 1: Фото
 	&__image
@@ -66,26 +68,40 @@
 			height: 240px
 			padding: 20px
 			background: rgba(0, 0, 0, 0.03)
+			+r(768)
+				width: 120px
+				height: 120px
+				padding: 12px
 		img
 			height: 100%
+			object-fit: contain
 
 	// Колонка 2: Инфо
 	&__info
 		display: flex
 		flex-direction: column
 		justify-content: space-between
+		+r(768)
+			grid-column: 1 / -1
+			gap: 10px
 
 	&__top
 		margin-bottom: 20px
 		+r(768)
-			margin-bottom: 15px
+			margin-bottom: 0
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+			gap: 10px
 
 	&__title
 		font-size: 32px
 		+med
 		margin-bottom: 10px !important
 		+r(768)
-			font-size: 18px
+			font-size: 16px
+			margin-bottom: 4px !important
+			line-height: 120%
 
 		a
 			color: $b
@@ -100,13 +116,17 @@
 		color: $b
 		+r(768)
 			font-size: 16px
+			white-space: nowrap
 
 	&__meta
 		display: flex
 		flex-direction: column
 		max-width: 320px
 		+r(768)
-			gap: 20px
+			gap: 8px
+			flex-direction: row
+			align-items: center
+			max-width: 100%
 
 	&__attribute
 		display: flex
@@ -117,9 +137,10 @@
 			padding-bottom: 16px
 		&:last-child
 			padding-top: 16px
-			border-top: 1px solid rgba(0, 0, 0, 0.1)
 		+r(768)
-			font-size: 14px
+			font-size: 13px
+			gap: 6px
+			padding: 0 !important
 
 	&__attribute-label
 		color: rgba($b, 0.6)
@@ -135,6 +156,9 @@
 		height: 20px
 		+br(50%)
 		border: 1px solid rgba($b, 0.2)
+		+r(768)
+			width: 16px
+			height: 16px
 
 	// Колонка 3: Действия
 	&__actions
@@ -143,9 +167,11 @@
 		justify-content: space-between
 		align-items: flex-end
 		+r(768)
-			flex-direction: row
+			grid-column: 1 / -1
+			flex-direction: row-reverse
 			align-items: center
 			justify-content: space-between
+			margin-top: 8px
 
 	&__remove
 		display: flex
@@ -154,6 +180,9 @@
 		color: #F52222
 		font-size: 14px
 		transition: opacity .3s ease
+		+r(768)
+			font-size: 13px
+			gap: 6px
 
 		&:hover
 			opacity: 0.7
@@ -161,12 +190,17 @@
 		svg
 			width: 16px
 			height: 16px
+			+r(768)
+				width: 14px
+				height: 14px
 
 	&__quantity
 		display: flex
 		align-items: center
 		height: 40px
 		background: rgba(0, 0, 0, 0.03)
+		+r(768)
+			height: 36px
 
 		.qty-btn
 			width: 40px
@@ -179,6 +213,9 @@
 			display: flex
 			align-items: center
 			justify-content: center
+			+r(768)
+				width: 36px
+				font-size: 16px
 
 			&:hover
 				background: rgba($b, 0.05)
@@ -191,6 +228,9 @@
 			font-size: 16px
 			text-align: center
 			+med
+			+r(768)
+				width: 50px
+				font-size: 14px
 
 //=============================================
 // Cart Totals
@@ -205,6 +245,8 @@
 .cart-totals
 	background: rgba(0, 0, 0, 0.03)
 	padding: 20px
+	+r(768)
+		padding: 15px
 
 	&__title
 		font-size: 18px
@@ -212,13 +254,13 @@
 		text-align: center
 		margin-bottom: 30px !important
 		+r(768)
-			font-size: 20px
-			margin-bottom: 20px !important
+			font-size: 18px
+			margin-bottom: 15px !important
 
 	&__coupon
 		margin-bottom: 20px
 		+r(768)
-			margin-bottom: 20px
+			margin-bottom: 15px
 
 	&__coupon-toggle
 		width: 100%
@@ -234,33 +276,36 @@
 		background: transparent
 		+r(768)
 			font-size: 14px
-			padding: 12px 15px
+			padding: 0 0 12px 0
 
 		&:hover
 			border-color: $b
 
 		svg
 			transition: transform .3s ease
+			+r(768)
+				width: 14px
+				height: 14px
 
 	&__row
 		display: flex
 		justify-content: space-between
 		align-items: center
 		+r(768)
-			padding: 15px 0
+			padding: 12px 0
 			font-size: 14px
 
 	&__total
 		font-size: 18px
 		+med
 		+r(768)
-			font-size: 16px
+			font-size: 15px
 
 	&__price
 		font-size: 18px
 		+med
 		+r(768)
-			font-size: 20px
+			font-size: 18px
 
 	&__checkout
 		width: 100%
@@ -273,6 +318,10 @@
 		line-height: 100%
 		margin-top: 20px
 		transition: background .35s ease-out, color .3s ease
+		+r(768)
+			padding: 12px 18px
+			font-size: 15px
+			margin-top: 15px
 		&:hover
 			color: $w
 			background: $b
