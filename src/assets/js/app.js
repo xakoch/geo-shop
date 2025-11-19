@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     requestAnimationFrame(() => {
         initImageScaleAnimation();
         initTextAnimation();
+        initHomePageAnimation();
     });
 });
 // Инициализация Lenis для плавного скролла
@@ -72,6 +73,7 @@ function initLenis() {
                 return node.classList.contains('mini-cart-body') ||
                        node.classList.contains('account-body') ||
                        node.closest('.mini-cart-body') ||
+                       node.closest('.additional-products-body') ||
                        node.closest('.account-body');
             }
         });
@@ -660,6 +662,94 @@ function initHeroSlider() {
 
     } catch (error) {
         console.error("Error in initHeroSlider:", error);
+    }
+}
+
+/**
+ * Инициализирует анимацию появления элементов на home page
+ */
+function initHomePageAnimation() {
+    try {
+        if (typeof gsap === 'undefined') {
+            return;
+        }
+
+        if (typeof IntersectionObserver === 'undefined') {
+            return;
+        }
+
+        // Проверяем, что мы на home странице
+        if (!document.body.classList.contains('home')) {
+            return;
+        }
+
+        // Селекторы для анимации (заголовки h1, h2 анимируются отдельно через initTextAnimation)
+        const animatedElements = [
+            { selector: '.hero__slider', delay: 0.2 },
+            { selector: '.about__text--1', delay: 0 },
+            { selector: '.about__text--2', delay: 0.15 },
+            { selector: '.categories .cats__item', stagger: 0.1 },
+            { selector: '.new-items .product', stagger: 0.08 },
+            { selector: '.new-items .catalog-btn-viewall', delay: 0.2 },
+            { selector: '.howto__img', delay: 0 },
+            { selector: '.howto__list li', stagger: 0.12 },
+            { selector: '.why__item', stagger: 0.1 },
+            { selector: '.services__info .section__title p', delay: 0.1 },
+            { selector: '.services__info > p', delay: 0.2 },
+            { selector: '.services__img', delay: 0.15 }
+        ];
+
+        animatedElements.forEach(config => {
+            const elements = document.querySelectorAll(config.selector);
+
+            if (elements.length === 0) return;
+
+            // Устанавливаем начальное состояние для всех элементов
+            gsap.set(elements, {
+                opacity: 0,
+                y: 40
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+
+                        // Определяем задержку для элемента
+                        let delay = config.delay || 0;
+
+                        // Если есть stagger, вычисляем задержку на основе индекса
+                        if (config.stagger) {
+                            const index = Array.from(elements).indexOf(target);
+                            delay = index * config.stagger;
+                        }
+
+                        // Анимация появления
+                        gsap.to(target, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            delay: delay,
+                            ease: "power2.out"
+                        });
+
+                        // Прекращаем наблюдение за этим элементом
+                        observer.unobserve(target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            // Наблюдаем за каждым элементом
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+    } catch (error) {
+        console.error("Error in " + arguments.callee.name + ":", error);
     }
 }
 

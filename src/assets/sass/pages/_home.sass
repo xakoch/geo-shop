@@ -104,6 +104,7 @@
             img
                 +r(991)
                     max-height: 200px
+                    object-fit: contain
 
         &--bottom
             display: flex
@@ -214,8 +215,6 @@
     +r(1360)
         grid-template-columns: repeat(2, 1fr)
         grid-gap: 15px
-    +r(767)
-        grid-template-columns: repeat(1, 1fr)
 
     &__item
         background: rgba(0, 0, 0, 0.03)
@@ -243,14 +242,19 @@
         font-size: 24px
         line-height: 100%
         color: $b
-        +r(991)
+        +r(1200)
             font-size: 20px
+        +r(991)
+            font-size: 18px
+        +r(767)
+            font-size: 16px
 
     img
         transition: transform .4s ease-out
         transform: scale(1)
         +r(991)
-            max-height: 150px
+            max-height: 180px
+            object-fit: contain
 
 //=============================================
 // How to Order - Section
